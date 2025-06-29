@@ -1,50 +1,127 @@
+/* Base */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #333;
+  background: #fdfdfd;
+  color: #222;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
-a { color: #d63e3e; text-decoration: none; }
+
+a {
+  color: #d63e3e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #a52828;
+}
+
+/* Hero */
 header#hero {
-  background: #fdf3f3;
+  background: linear-gradient(to right, #ffe0e6, #fff);
   text-align: center;
   padding: 3rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #f7caca;
 }
-header#hero h1 { font-size: 2.5rem; }
-header#hero p { font-size: 1.1rem; margin: 0.5rem; }
-header nav a { margin: 0 1rem; font-weight: 600; }
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+header h1 span {
+  color: #d63e3e;
+}
+header nav {
+  margin-top: 1rem;
+}
+header nav a {
+  margin: 0 1.2rem;
+  font-weight: 600;
+  position: relative;
+}
+header nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #d63e3e;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+header nav a:hover::after {
+  transform: scaleX(1);
+}
 
+/* Section */
 .section {
   padding: 4rem 1rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
 .section h2 {
+  font-size: 1.8rem;
   border-bottom: 2px solid #fac;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Project Card */
 .project-card {
-  background: #fff6f6;
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid #fac;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.project-card h3 { margin: 0; }
-.project-card a { font-weight: 600; }
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+.project-card p {
+  margin-bottom: 0.6rem;
+}
 
+/* Timeline / Experience */
 .timeline .item {
   margin-bottom: 2rem;
 }
-.timeline h3 { margin: 0; font-size: 1.2rem; }
-.timeline span { font-size: 0.9rem; color: #555; }
-.timeline ul { padding-left: 1.2rem; margin: 0.5rem 0 0; }
+.timeline h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.timeline span {
+  font-size: 0.9rem;
+  color: #777;
+}
+.timeline ul {
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
 
+/* Contact Section */
+#contact a {
+  font-weight: bold;
+}
+#contact p {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer */
 footer {
   text-align: center;
+  font-size: 0.85rem;
+  color: #555;
   padding: 1.5rem;
-  font-size: 0.9rem;
-  background: #fdf3f3;
+  background: #fff0f3;
+  margin-top: 3rem;
+  border-top: 1px solid #f7caca;
 }
